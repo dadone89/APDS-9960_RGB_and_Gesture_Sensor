@@ -1559,6 +1559,201 @@ bool SparkFun_APDS9960::setGestureGain(uint8_t gain)
     return true;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * @brief Get the offset of the photodiode.
+ *
+ *   Value    Offset
+ *   127      Max
+ *   0        Neutral
+ *   -127     Min
+ *
+ * @return the current photodiode offset. 0xFF on error.
+ */
+int8_t SparkFun_APDS9960::getGestureOffset_U()
+{
+    uint8_t val;
+    
+    /* Read value from GCONF2 register */
+    if( !wireReadDataByte(APDS9960_GOFFSET_U, val) ) {
+        return ERROR;
+    }
+      
+    return val;
+}
+
+/**
+ * @brief Set the offset of the photodiode.
+ * The analog circuitry of the device applies offset values as a subtraction to the signal accumulation;
+ * therefore a positive offset value has the effect of decreasing the results
+ *
+ *   Value    Offset
+ *   127      Max
+ *   0        Neutral
+ *   -127     Min
+ *
+ * @param[in] offset the value for the photodiode offset
+ * @return True if operation successful. False otherwise.
+ */
+bool SparkFun_APDS9960::setGestureOffset_U(uint8_t offset)
+{
+    uint8_t val;
+        
+    /* Write register value */
+    if( !wireWriteDataByte(APDS9960_GOFFSET_U, offset) ) {    
+        return false;
+    }
+    
+    return true;
+}
+
+
+/**
+ * @brief Get the offset of the photodiode.
+ *
+ *   Value    Offset
+ *   127      Max
+ *   0        Neutral
+ *   -127     Min
+ *
+ * @return the current photodiode offset. 0xFF on error.
+ */
+int8_t SparkFun_APDS9960::getGestureOffset_D()
+{
+    uint8_t val;
+    
+    /* Read value from GCONF2 register */
+    if( !wireReadDataByte(APDS9960_GOFFSET_D, val) ) {
+        return ERROR;
+    }
+      
+    return val;
+}
+
+/**
+ * @brief Set the offset of the photodiode.
+ * The analog circuitry of the device applies offset values as a subtraction to the signal accumulation;
+ * therefore a positive offset value has the effect of decreasing the results
+ *
+ *   Value    Offset
+ *   127      Max
+ *   0        Neutral
+ *   -127     Min
+ *
+ * @param[in] offset the value for the photodiode offset
+ * @return True if operation successful. False otherwise.
+ */
+bool SparkFun_APDS9960::setGestureOffset_D(uint8_t offset)
+{
+    uint8_t val;
+        
+    /* Write register value */
+    if( !wireWriteDataByte(APDS9960_GOFFSET_D, offset) ) {    
+        return false;
+    }
+    
+    return true;
+}
+
+/**
+ * @brief Get the offset of the photodiode.
+ *
+ *   Value    Offset
+ *   127      Max
+ *   0        Neutral
+ *   -127     Min
+ *
+ * @return the current photodiode offset. 0xFF on error.
+ */
+int8_t SparkFun_APDS9960::getGestureOffset_L()
+{
+    uint8_t val;
+    
+    /* Read value from GCONF2 register */
+    if( !wireReadDataByte(APDS9960_GOFFSET_L, val) ) {
+        return ERROR;
+    }
+      
+    return val;
+}
+
+/**
+ * @brief Set the offset of the photodiode.
+ * The analog circuitry of the device applies offset values as a subtraction to the signal accumulation;
+ * therefore a positive offset value has the effect of decreasing the results
+ *
+ *   Value    Offset
+ *   127      Max
+ *   0        Neutral
+ *   -127     Min
+ *
+ * @param[in] offset the value for the photodiode offset
+ * @return True if operation successful. False otherwise.
+ */
+bool SparkFun_APDS9960::setGestureOffset_L(uint8_t offset)
+{
+    uint8_t val;
+        
+    /* Write register value */
+    if( !wireWriteDataByte(APDS9960_GOFFSET_L, offset) ) {    
+        return false;
+    }
+    
+    return true;
+}
+
+/**
+ * @brief Get the offset of the photodiode.
+ *
+ *   Value    Offset
+ *   127      Max
+ *   0        Neutral
+ *   -127     Min
+ *
+ * @return the current photodiode offset. 0xFF on error.
+ */
+int8_t SparkFun_APDS9960::getGestureOffset_R()
+{
+    uint8_t val;
+    
+    /* Read value from GCONF2 register */
+    if( !wireReadDataByte(APDS9960_GOFFSET_R, val) ) {
+        return ERROR;
+    }
+      
+    return val;
+}
+
+/**
+ * @brief Set the offset of the photodiode.
+ * The analog circuitry of the device applies offset values as a subtraction to the signal accumulation;
+ * therefore a positive offset value has the effect of decreasing the results
+ *
+ *   Value    Offset
+ *   127      Max
+ *   0        Neutral
+ *   -127     Min
+ *
+ * @param[in] offset the value for the photodiode offset
+ * @return True if operation successful. False otherwise.
+ */
+bool SparkFun_APDS9960::setGestureOffset_R(uint8_t offset)
+{
+    uint8_t val;
+        
+    /* Write register value */
+    if( !wireWriteDataByte(APDS9960_GOFFSET_R, offset) ) {    
+        return false;
+    }
+    
+    return true;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 /**
  * @brief Gets the drive current of the LED during gesture mode
  *

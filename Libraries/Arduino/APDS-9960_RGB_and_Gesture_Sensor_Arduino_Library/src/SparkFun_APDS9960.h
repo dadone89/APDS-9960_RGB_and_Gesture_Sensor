@@ -17,7 +17,7 @@
 #include <Arduino.h>
 
 /* Debug */
-#define DEBUG                   0
+#define DEBUG                   1
 
 /* APDS-9960 I2C address */
 #define APDS9960_I2C_ADDR       0x39
@@ -174,7 +174,7 @@
 #define DEFAULT_GEXTH           30      // Threshold for exiting gesture mode    
 #define DEFAULT_GCONF1          0x40    // 4 gesture events for int., 1 for exit
 #define DEFAULT_GGAIN           GGAIN_4X
-#define DEFAULT_GLDRIVE         LED_DRIVE_100MA
+#define DEFAULT_GLDRIVE         LED_DRIVE_25MA
 #define DEFAULT_GWTIME          GWTIME_2_8MS
 #define DEFAULT_GOFFSET         0       // No offset scaling for gesture mode
 #define DEFAULT_GPULSE          0xC9    // 32us, 10 pulses
@@ -249,7 +249,19 @@ public:
     bool setProximityGain(uint8_t gain);
     uint8_t getGestureGain();
     bool setGestureGain(uint8_t gain);
-    
+	
+	/* Offset control */    ///////////////////////////////////////////////////////////////////////////
+    int8_t getGestureOffset_U();
+    bool setGestureOffset_U(uint8_t offset);
+	int8_t getGestureOffset_D();
+    bool setGestureOffset_D(uint8_t offset);
+	int8_t getGestureOffset_L();
+    bool setGestureOffset_L(uint8_t offset);
+	int8_t getGestureOffset_R();
+    bool setGestureOffset_R(uint8_t offset);
+	/////////////////////////////////////////////////////////////////////////////
+	
+	
     /* Get and set light interrupt thresholds */
     bool getLightIntLowThreshold(uint16_t &threshold);
     bool setLightIntLowThreshold(uint16_t threshold);
